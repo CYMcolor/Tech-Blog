@@ -1,4 +1,5 @@
 // dependecies---------------
+const path = require('path');
 // express stuff
 const express = require('express');
 const session = require('express-session');
@@ -16,11 +17,48 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine and custom helpers
-//i think this allows the helpers.js to ineteract with hadlebars
+//allows the helpers.js to ineteract with hadlebars
 const hbs = exphbs.create({ helpers });
 
 //create seesion
 const sess = {
-
+    cookie: {
+        // milliseconds * seconds * minutes * hours
+        //expires in 24 hours
+        maxAge: 1000 * 60 * 60 * 24,
+        // store session cookieswhen connected to http server
+        httpOnly: true,
+        //must exucute protcal in https
+        secure: false,
+        //must be from the same domain
+        sameSite: 'strict',
+    },
+    // prevenst session being saved back into session store
+    resave: false,
+    // save a session when it is new
+    saveUninitialized: true,
+    // Sets up session store with sequelize
+    store: new SequelizeStore({
+        db: sequelize,
+    }),
 };
 
+// init app session
+app.use(session(sess));
+
+// Inform Express.js on which template engine to use
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+// app connect to routes
+app.use(routes);
+
+// sync with database first then listen
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
+});
+  
