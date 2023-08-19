@@ -19,7 +19,7 @@
   text-decoration: underline;
 }
 
-.post
+.post, .comment
 {
   margin: 20px;
 }

@@ -1,4 +1,27 @@
 <!-- The post block-->
 {{> post-block post}}
 <!-- TODO option to add a comment (willl need javascript-->
+
 <!-- Show all comments-->
+<section>
+    <h3>Comments</h3>
+    {{#each post.comments as |comment| }}
+    <div class= "comment">
+        <p>
+             {{comment.content}}
+        </p>
+        <div class="post-info">
+            <div>
+            by {{comment.user.username}}
+            </div>
+            <div>
+                {{format_time comment.createdAt}} on
+                {{format_date comment.createdAt}}
+            </div>
+        </div>
+       
+        
+    </div>
+    {{/each}}
+
+</section>

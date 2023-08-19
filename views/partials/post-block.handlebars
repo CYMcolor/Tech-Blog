@@ -1,5 +1,4 @@
 <article class = "post">
-    <!-- TODO link title to a single page post -->
     <h2>
         <a href="/post/{{id}}">
             {{title}}
@@ -8,11 +7,14 @@
     <p>
         {{content}}
     </p>
-    <div>
-        by {{user.username}}
+    <div class="post-info">
+        <div>
+            by {{user.username}}
+        </div>
+        <div>
+            {{format_time createdAt}} on
+            {{format_date createdAt}}
+        </div>
     </div>
-    <div>
-        {{format_time createdAt}} on
-        {{format_date createdAt}}
-    </div>
+    
 </article>

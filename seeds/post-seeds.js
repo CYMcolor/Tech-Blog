@@ -2,7 +2,7 @@ const { Post } = require('../models');
 
 const postData = [
     {
-        title: 'Explosions are the GREATEST!',
+        title: 'EXPLOSIONS ARE THE GREATEST!',
         content: "Once upon a time, God said, 'Let there be light,' and so there was light. God said, 'Let there be strength,' and so there was the high-performance version of Raythean's Challenger Hellcat.",
         user_id: 1  
     },
