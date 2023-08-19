@@ -34,7 +34,6 @@ Comment.init(
                 key: id
             }
         }
-        
     },
     {
         sequelize,
@@ -47,3 +46,5 @@ Comment.init(
         modelName: 'comment'
     }
 );
+
+module.exports = Comment;
