@@ -1,5 +1,6 @@
 //login event handler
 const loginFormHandler =  async (event) => {
+    event.preventDefault();
     // login form varables from form
     const username = document.querySelector('#username-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
@@ -19,3 +20,7 @@ const loginFormHandler =  async (event) => {
         }
     } 
 };
+
+document
+  .querySelector('.login-form')
+  .addEventListener('submit', loginFormHandler);

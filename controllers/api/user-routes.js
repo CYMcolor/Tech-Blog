@@ -4,17 +4,21 @@ const { User } = require('../../models');
 // create user data for sign up
 router.post('/', async (req, res) => {
     try {
-      const userData = await User.create(req.body);
+      const userData = await User.create({
+        username: req.body.username,
+        password: req.body.password
+      });
   
       req.session.save(() => {
-        req.session.userId = userData.id;
+        req.session.user_id = userData.id;
         // if signed up session is logged in
-        req.session.loggedIn = true;
+        req.session.logged_in = true;
   
         res.status(200).json(userData);
       });
     } catch (err) {
-      res.status(400).json(err);
+        console.log(err);
+        res.status(400).json(err);
     }
 });
 
@@ -39,8 +43,8 @@ router.post('/login', async (req, res) => {
         }
         //save session
         req.session.save(() =>{
-            req.session.userId = userData.id;
-            req.session.loggedIn = true;
+            req.session.user_id = userData.id;
+            req.session.logged_in = true;
             res.json({ user: userData, message: 'You are now logged in!' });
         });
     } catch (err) {
@@ -50,7 +54,7 @@ router.post('/login', async (req, res) => {
 
 // logout
 router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
         req.session.destroy(() => {
             // 204 means that the req sucess but there is not content
             res.status(204).end();
