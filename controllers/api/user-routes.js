@@ -49,7 +49,7 @@ router.post('/login', async (req, res) => {
 });
 
 // logout
-router.post('logout', (req, res) => {
+router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
             // 204 means that the req sucess but there is not content
