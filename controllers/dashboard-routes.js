@@ -29,7 +29,12 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id',  withAuth, async (req, res) => {
+    //if the user clicks on link to own dashboard redirect
+    if (req.params.id == req.session.user_id) {
+        console.log('test');
+        return res.redirect('/dashboard');
+    }
     try {
         //get all posts
         const postData = await Post.findAll({

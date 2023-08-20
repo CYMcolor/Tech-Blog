@@ -1,9 +1,10 @@
 //logout event handler
-const logoutHandler =  async (event) => {
+const logout=  async () => {
+    alert('was clicked!');
     //send POST request for logout
     const response = await fetch('/api/users/logout', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/javascript' },
     });
 
     // if sucessful redirect user to home
@@ -16,4 +17,4 @@ const logoutHandler =  async (event) => {
 
 document
   .querySelector('#logout')
-  .addEventListener('click', logoutHandler);
+  .addEventListener('click', logout);
