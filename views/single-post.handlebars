@@ -12,7 +12,10 @@
         </p>
         <div class="post-info">
             <div>
-            by {{comment.user.username}}
+                by 
+                <a href="/dashboard/{{comment.user.id}}">
+                    {{comment.user.username}}
+                </a>
             </div>
             <div>
                 {{format_time comment.createdAt}} on
