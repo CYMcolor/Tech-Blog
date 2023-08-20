@@ -17,10 +17,14 @@ router.get('/', withAuth, async (req, res) => {
                 },
             ]
         });
-        //serialize the data 
+        //get user data
+        const userData = await User.findByPk(req.session.user_id);
+        //serialize the data
+        const  user = userData.get({plain: true}); 
         const posts = postData.map((post) => post.get({plain: true}));
         // render the homp view
         res.render('dashboard', {
+            user,
             posts, 
             logged_in: req.session.logged_in 
         });
@@ -47,10 +51,14 @@ router.get('/:id',  withAuth, async (req, res) => {
                 },
             ]
         });
+        //get user data
+        const userData = await User.findByPk(req.params.id);
         //serialize the data 
+        const user = userData.get({plain: true}); 
         const posts = postData.map((post) => post.get({plain: true}));
         // render the homp view
         res.render('dashboard', {
+            user,
             posts, 
             logged_in: req.session.logged_in 
         });
