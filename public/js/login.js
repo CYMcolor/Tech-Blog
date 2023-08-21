@@ -28,11 +28,12 @@ const signupFormHandler = async (event) => {
   const username = document.querySelector('#username-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
   const repassword = document.querySelector('#re-password-signup').value.trim();
-
+  const warning = document.getElementById('password-warning');
+  
   if (password != repassword ){
-    document.getElementById('password-warning').innerHTML = "Passwords does not match";
+    warning.innerHTML = "* Passwords does not match";
   } else if (password.length < 8){
-    document.getElementById('password-warning').innerHTML = "Password must be at least 8 characters long";
+    warning.innerHTML = "* Password must be at least 8 characters long";
     //alert("Password must be at least 8 characters long");
   } else if(password && repassword && username){
     //send an api POST request to users
