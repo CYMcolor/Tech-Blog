@@ -45,7 +45,7 @@ router.delete('/', async (req, res) => {
 // comment update
 router.put('/', async (req, res) => {
     try {
-        const commentData = await Comment.update({
+        const commentData = await Comment.update(req.body, {
             where: {
                 id: req.params.id
             }
