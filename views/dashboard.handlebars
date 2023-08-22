@@ -1,9 +1,15 @@
 <div>{{user.username}}'s Dashboard</div>
 
 {{#if sameUser}}
-    <div>Tesing if user id matched loggedin user</div>
+    <div class="create-post">
+        <input class="title" type="text" placeholder="Title">
+        <textarea name="create-post" id="new-post" cols="50" rows="10"></textarea>
+        <button class="btn save-btn"> Save</button>
+    </div>
 {{/if}}
 <!-- loops for each post and goes to post block partial -->
 {{#each posts as |post| }}
     {{> post-block}}
 {{/each}}
+
+<script src="/js/post.js"></script>

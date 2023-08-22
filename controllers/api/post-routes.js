@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
             title: req.body.title,
             content: req.body.content,
             // the user loggedin
-            user_id: req.session.user
+            user_id: req.session.user_id
         });
 
         res.status(200).json(postData);
@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
 });
 
 // delete post
-router.delete('/', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         const postData = await Post.destroy({
             where: {
@@ -43,7 +43,7 @@ router.delete('/', async (req, res) => {
 });
 
 // update post
-router.put('/', async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
         const postData = await Post.update(req.body, {
             where: {
