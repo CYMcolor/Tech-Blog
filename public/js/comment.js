@@ -40,7 +40,8 @@ document
   .querySelector('.save-btn')
   .addEventListener('click', newComment);
 
-document
-  .querySelector('.delete-btn-comment')
-  .addEventListener('click', deleteHandlerComment);
+const buttons = document.querySelectorAll('.delete-btn-comment');
+buttons.forEach((btn) =>{
+      btn.addEventListener('click', deleteHandlerComment);
+});
 
