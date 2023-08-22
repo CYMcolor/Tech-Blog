@@ -12,32 +12,29 @@
     {{/if}}
     <!-- Show all comments-->
     {{#each post.comments as |comment| }}
-    <div class= "comment comment-{{comment.id}}">
-        <p>
-             {{comment.content}}
-        </p>
-        <div class="post-info">
-            <div class="author">
-                by 
-                <a href="/dashboard/{{comment.user.id}}">
-                    {{comment.user.username}}
-                </a>
+        <div class= "comment comment-{{comment.id}}">
+            <p>
+                {{comment.content}}
+            </p>
+            <div class="post-info">
+                <div class="author">
+                    by 
+                    <a href="/dashboard/{{comment.user.id}}">
+                        {{comment.user.username}}
+                    </a>
+                </div>
+                <div class="date">
+                    {{format_time comment.createdAt}} on
+                    {{format_date comment.createdAt}}
+                </div>
             </div>
-            <div class="date">
-                {{format_time comment.createdAt}} on
-                {{format_date comment.createdAt}}
-            </div>
+            
+            {{#if (isEqual ../logged_user comment.user.id)}}
+                <button class="btn delete-btn" data-id="{{comment.id}}"> 
+                    Delete 
+                </button>            
+            {{/if}}
+                
         </div>
-        
-        {{#if (isEqual ../logged_user comment.user.id)}}
-            <button class="btn delete-btn" data-id="{{comment.id}}"> 
-                Delete 
-            </button>            
-        {{/if}}
-              
-    </div>
     {{/each}}
-
 </section>
-
-<script src="/js/comment.js"></script>
