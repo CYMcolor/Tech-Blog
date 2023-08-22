@@ -39,7 +39,7 @@ const deleteHandlerComment = async (event) => {
 const editHandlerComment = async (event) =>{
     const parent = event.target.parentNode;
     //save previous information
-    let oldContent = parent.querySelector('.content').innerHTML.trim('');
+    const oldContent = parent.querySelector('.content').innerHTML.trim('');
     console.log('old content: ' + oldContent);
     //clears comment block
     while(parent.firstChild){
