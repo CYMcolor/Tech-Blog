@@ -30,7 +30,7 @@
             </div>
             
             {{#if (isEqual ../logged_user comment.user.id)}}
-                <button class="btn delete-btn" data-id="{{comment.id}}"> 
+                <button class="btn delete-btn delete-btn-comment" data-id="{{comment.id}}"> 
                     Delete 
                 </button>            
             {{/if}}
@@ -38,3 +38,5 @@
         </div>
     {{/each}}
 </section>
+
+<script src="/js/comment.js"></script>

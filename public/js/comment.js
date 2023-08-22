@@ -19,7 +19,7 @@ const newComment = async (event) => {
     }
 };
 
-const deleteHandler = async (event) => {
+const deleteHandlerComment = async (event) => {
     //checks the id of comment
     let cofirm = confirm('Are you sure you want to delete?');
     if(event.target.hasAttribute('data-id') &&cofirm)
@@ -41,6 +41,6 @@ document
   .addEventListener('click', newComment);
 
 document
-  .querySelector('.delete-btn')
-  .addEventListener('click', deleteHandler);
+  .querySelector('.delete-btn-comment')
+  .addEventListener('click', deleteHandlerComment);
 
