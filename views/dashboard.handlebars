@@ -1,4 +1,8 @@
 <div>{{user.username}}'s Dashboard</div>
+
+{{#if sameUser}}
+    <div>Tesing if user id matched loggedin user</div>
+{{/if}}
 <!-- loops for each post and goes to post block partial -->
 {{#each posts as |post| }}
     {{> post-block}}

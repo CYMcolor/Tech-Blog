@@ -8,13 +8,13 @@
         {{content}}
     </p>
     <div class="post-info">
-        <div>
+        <div class="author">
             by 
             <a href="/dashboard/{{user.id}}">
                 {{user.username}}
             </a>
         </div>
-        <div>
+        <div class="date">
             {{format_time createdAt}} on
             {{format_date createdAt}}
         </div>

@@ -22,10 +22,14 @@ router.get('/', withAuth, async (req, res) => {
         //serialize the data
         const  user = userData.get({plain: true}); 
         const posts = postData.map((post) => post.get({plain: true}));
-        // render the homp view
+        // variable so that only the logged in user can do stuff in their dashboard
+        let sameUser = true;
+       
+        // render the dashboard view
         res.render('dashboard', {
             user,
-            posts, 
+            posts,
+            sameUser,
             logged_in: req.session.logged_in 
         });
     } catch (err) {
@@ -56,10 +60,10 @@ router.get('/:id',  withAuth, async (req, res) => {
         //serialize the data 
         const user = userData.get({plain: true}); 
         const posts = postData.map((post) => post.get({plain: true}));
-        // render the homp view
+        // render the dashboard view
         res.render('dashboard', {
             user,
-            posts, 
+            posts,
             logged_in: req.session.logged_in 
         });
     } catch (err) {

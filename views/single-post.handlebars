@@ -17,16 +17,25 @@
              {{comment.content}}
         </p>
         <div class="post-info">
-            <div>
+            <div class="author">
                 by 
                 <a href="/dashboard/{{comment.user.id}}">
                     {{comment.user.username}}
                 </a>
             </div>
-            <div>
+            <div class="date">
                 {{format_time comment.createdAt}} on
                 {{format_date comment.createdAt}}
             </div>
+        </div>
+        <div>
+            {{#if (isEqual ../logged_user comment.user.id)}}
+            <div>
+                <button>
+                    Delete 
+                </button>
+            </div>
+            {{/if}}
         </div>        
     </div>
     {{/each}}

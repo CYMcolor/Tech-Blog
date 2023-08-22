@@ -41,10 +41,13 @@ router.get('/post/:id', async (req, res) => {
                 }
             ]
         });
+    
         const post = postData.get({plain: true});
-        // render the homp view
+        
+        // render the home view
         res.render('single-post', {
-            post, 
+            post,
+            logged_user: req.session.user_id,
             logged_in: req.session.logged_in 
         });
     } catch (err) {

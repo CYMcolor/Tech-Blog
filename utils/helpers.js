@@ -9,4 +9,10 @@ module.exports = {
         newDate.getFullYear()
         }`;
     },
+    isEqual: (a, b) => {
+        if (a == b) {
+          return true;
+        } 
+        return false;
+    }
 }

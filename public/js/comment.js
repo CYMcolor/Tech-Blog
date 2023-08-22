@@ -13,11 +13,14 @@ const newComment = async (event) => {
         if(response.ok){
             //clear the text area and reload page
             document.location.reload();
-            document.querySelector('#new-comment').innerHTML = '';
         } else {
             alert(response.statusText);
         }
     }
+};
+
+const deleteHandler = async (event) => {
+
 };
 
 document
