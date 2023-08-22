@@ -20,7 +20,7 @@ router.get('/', withAuth, async (req, res) => {
         //get user data
         const userData = await User.findByPk(req.session.user_id);
         //serialize the data
-        const  user = userData.get({plain: true}); 
+        const user = userData.get({plain: true}); 
         const posts = postData.map((post) => post.get({plain: true}));
         // variable so that only the logged in user can do stuff in their dashboard
         let sameUser = true;
