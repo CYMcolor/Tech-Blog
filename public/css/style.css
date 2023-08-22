@@ -23,3 +23,12 @@
 {
   margin: 20px;
 }
+
+/* saves white space */
+textarea{
+  white-space: pre-wrap;
+}
+/* only keeps new line white spaces */
+.content{
+  white-space:pre-line;
+}

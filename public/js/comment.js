@@ -37,10 +37,62 @@ const deleteHandlerComment = async (event) => {
 };
 
 const editHandlerComment = async (event) =>{
-    console.log('edit button works');
-
+    const parent = event.target.parentNode;
+    //save previous information
+    let oldContent = parent.querySelector('.content').innerHTML.trim('');
+    console.log('old content: ' + oldContent);
+    //clears comment block
+    while(parent.firstChild){
+        parent.removeChild(parent.firstChild);
+    }
+    //create new elements
+    const newBlock = document.createElement('div');
+    const newText = document.createElement('textarea');
+    const newSaveBtn = document.createElement('button');
+    newSaveBtn.innerHTML = 'Save';
+    //add attributes
+    newBlock.className = 'edit-comment';
+    newText.classList.add('edit-content');
+    newText.classList.add(`${parent.id}-edit`);
+    newText.innerHTML = oldContent;
+    newSaveBtn.classList.add('btn');
+    newSaveBtn.classList.add('save-edit-btn');
+    // append to parent element
+    parent.append(newBlock);
+    newBlock.append(newText);
+    newBlock.append(newSaveBtn);
 };
 
+const saveEditHandler  = async (event) =>{
+    if(event.target.classList.contains('save-edit-btn'))
+    {
+        console.log('save-edit button works');
+        const parent = event.target.parentNode.parentNode;
+        const comment_id = parent.getAttribute('data-id');
+        console.log(comment_id);
+        //retrieve information
+        const newContent = await document.querySelector(`.${parent.id}-edit`).value;
+        console.log('new content: ' + newContent);
+        // if valid info
+        if(parent.hasAttribute('data-id') && newContent){
+            
+            const response = await fetch(`/api/comments/${comment_id}`, {
+                method: 'PUT',
+                body: JSON.stringify({content: newContent}),
+                headers: { 'Content-Type': 'application/json' },
+            });
+            // if sucessful redirect 
+            if(response.ok){
+                //clear the text area and reload page
+                document.location.reload();
+            } else {
+                alert(response.statusText);
+            }
+        }
+
+    }
+    
+};
 // attach elments to event handlers
 //save
 document
@@ -56,4 +108,10 @@ const commentEditButtons = document.querySelectorAll('.edit-btn-comment');
 commentEditButtons.forEach((btn) =>{
       btn.addEventListener('click', editHandlerComment);
 });
+//save-edit
+const commentBlock = document.querySelectorAll('.comment-block');
+commentBlock.forEach((block) =>{
+    block.addEventListener('click', saveEditHandler);
+});
+
 

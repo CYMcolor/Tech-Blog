@@ -7,13 +7,13 @@
     {{#if logged_in}}
         <div class="create-comment" data-id="{{post.id}}">
             <textarea name="create-comment" id="new-comment" cols="50" rows="3"></textarea>
-            <button class="btn save-btn" data-id="{{post.id}}"> Save</button>
+            <button class="btn save-btn" data-id="{{post.id}}">Save</button>
         </div>
     {{/if}}
     <!-- Show all comments-->
     {{#each post.comments as |comment| }}
-        <div class= "comment comment-{{comment.id}}">
-            <p>
+        <div class= "comment comment-block" id="comment-{{comment.id}}" data-id="{{comment.id}}">
+            <p class="content">
                 {{comment.content}}
             </p>
             <div class="post-info">
