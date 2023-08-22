@@ -11,7 +11,8 @@ router.get('/', async (req, res) => {
                 {
                   model: User
                 },
-            ]
+            ],
+            order: [['created_at', 'DESC']],
         });
         //serialize the data 
         const posts = postData.map((post) => post.get({plain: true}));

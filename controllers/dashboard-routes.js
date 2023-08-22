@@ -15,7 +15,8 @@ router.get('/', withAuth, async (req, res) => {
                 {
                   model: User
                 },
-            ]
+            ],
+            order: [['created_at', 'DESC']],
         });
         //get user data
         const userData = await User.findByPk(req.session.user_id);
@@ -53,7 +54,8 @@ router.get('/:id',  withAuth, async (req, res) => {
                 {
                   model: User
                 },
-            ]
+            ],
+            order: [['created_at', 'DESC']],
         });
         //get user data
         const userData = await User.findByPk(req.params.id);
