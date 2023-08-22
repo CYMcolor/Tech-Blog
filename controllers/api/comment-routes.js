@@ -22,11 +22,11 @@ router.post('/', async (req, res) => {
 });
 
 // delete comment
-router.delete('/', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         const commentData = await Comment.destroy({
             where: {
-                id: req.params.id
+                id: req.params.id,
             }
         });
         if(!commentData){
@@ -43,7 +43,7 @@ router.delete('/', async (req, res) => {
 });
 
 // comment update
-router.put('/', async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
         const commentData = await Comment.update(req.body, {
             where: {

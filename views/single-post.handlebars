@@ -31,7 +31,7 @@
         <div>
             {{#if (isEqual ../logged_user comment.user.id)}}
             <div>
-                <button>
+                <button class="btn delete-btn" data-id="{{comment.id}}"> 
                     Delete 
                 </button>
             </div>

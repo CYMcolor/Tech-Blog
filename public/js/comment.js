@@ -20,9 +20,27 @@ const newComment = async (event) => {
 };
 
 const deleteHandler = async (event) => {
-
+    //checks the id of comment
+    let cofirm = confirm('Are you sure you want to delete?');
+    if(event.target.hasAttribute('data-id') &&cofirm)
+    {
+        const comment_id = event.target.getAttribute('data-id');
+        const response = await fetch(`/api/comments/${comment_id}`, {
+            method: 'DELETE'
+        });
+        if (response.ok) {
+            document.location.reload();
+        } else {
+            alert('Failed to delete comment');
+        }  
+    }
 };
 
 document
   .querySelector('.save-btn')
   .addEventListener('click', newComment);
+
+document
+  .querySelector('.delete-btn')
+  .addEventListener('click', deleteHandler);
+
