@@ -44,27 +44,7 @@
         {{{body}}}
     </main>
 </body>
-{{#if logged_in}}
-    <script >
-        //logout event handler
-        const logout=  async () => {
 
-            //send POST request for logout
-            const response = await fetch('/api/users/logout', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/javascript' },
-            });
+<script src="/js/logout.js"> </script>
 
-            // if sucessful redirect user to home
-            if (response.ok) {
-                document.location.replace('/');
-            } else {
-                alert(response.statusText);
-            }
-        };
-        document
-        .querySelector('#logout')
-        .addEventListener('click', logout);
-    </script>
-{{/if}}
 </html>

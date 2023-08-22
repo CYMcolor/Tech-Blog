@@ -1,12 +1,18 @@
 <!-- The post block-->
 {{> post-block post}}
-<!-- TODO option to add a comment (willl need javascript-->
-
-<!-- Show all comments-->
+<!-- comment section-->
 <section>
     <h3>Comments</h3>
+    <!-- add comment -->
+    {{#if logged_in}}
+        <div class="create-comment" data-id="{{post.id}}">
+            <textarea name="create-comment" id="new-comment" cols="50" rows="3"></textarea>
+            <button class="btn save-btn" data-id="{{post.id}}"> Save</button>
+        </div>
+    {{/if}}
+    <!-- Show all comments-->
     {{#each post.comments as |comment| }}
-    <div class= "comment">
+    <div class= "comment comment-{{comment.id}}">
         <p>
              {{comment.content}}
         </p>
@@ -26,3 +32,5 @@
     {{/each}}
 
 </section>
+
+<script src="/js/comment.js"></script>

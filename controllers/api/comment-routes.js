@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
             content: req.body.content,
             post_id: req.body.post_id,
             // the user loggedin
-            user_id: req.session.user
+            user_id: req.session.user_id
         });
 
         res.status(200).json(commentData);

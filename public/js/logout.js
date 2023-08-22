@@ -1,6 +1,5 @@
 //logout event handler
 const logout=  async () => {
-    alert('was clicked!');
     //send POST request for logout
     const response = await fetch('/api/users/logout', {
         method: 'POST',
