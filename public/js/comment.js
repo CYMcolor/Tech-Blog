@@ -1,7 +1,6 @@
 const newComment = async (event) => {
     //retrieve information
     const content = document.querySelector('#new-comment').value;
-    console.log('the content: ' + content);
     // if valid info
     if(event.target.hasAttribute('data-id') && content){
         const post_id = event.target.getAttribute('data-id');
@@ -12,7 +11,8 @@ const newComment = async (event) => {
         });
         // if sucessful redirect 
         if(response.ok){
-            //clear the text area
+            //clear the text area and reload page
+            document.location.reload();
             document.querySelector('#new-comment').innerHTML = '';
         } else {
             alert(response.statusText);
