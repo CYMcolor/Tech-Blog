@@ -63,19 +63,19 @@ const editHandlerComment = async (event) =>{
     newBlock.append(newSaveBtn);
 };
 
-const saveEditHandler  = async (event) =>{
+const saveEditCommentHandler  = async (event) =>{
+    //checks to see if save button exits
     if(event.target.classList.contains('save-edit-btn'))
     {
-        console.log('save-edit button works');
+        // gets the comment block element
         const parent = event.target.parentNode.parentNode;
+        //gets comment id from parent data-id
         const comment_id = parent.getAttribute('data-id');
-        console.log(comment_id);
-        //retrieve information
+        //retrieve content information
         const newContent = await document.querySelector(`.${parent.id}-edit`).value;
-        console.log('new content: ' + newContent);
         // if valid info
         if(parent.hasAttribute('data-id') && newContent){
-            
+            //update comment
             const response = await fetch(`/api/comments/${comment_id}`, {
                 method: 'PUT',
                 body: JSON.stringify({content: newContent}),
@@ -89,9 +89,7 @@ const saveEditHandler  = async (event) =>{
                 alert(response.statusText);
             }
         }
-
     }
-    
 };
 // attach elments to event handlers
 //save
@@ -111,7 +109,7 @@ commentEditButtons.forEach((btn) =>{
 //save-edit
 const commentBlock = document.querySelectorAll('.comment-block');
 commentBlock.forEach((block) =>{
-    block.addEventListener('click', saveEditHandler);
+    block.addEventListener('click', saveEditCommentHandler);
 });
 
 
