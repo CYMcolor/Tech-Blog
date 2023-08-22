@@ -19,5 +19,11 @@
             {{format_date createdAt}}
         </div>
     </div>
+     log id: {{logged_user}}?
+    {{#if (isEqual logged_user user.id)}}
+        <button class="btn delete-btn" data-id="{{id}}"> 
+            Delete 
+        </button>            
+    {{/if}}
     
 </article>

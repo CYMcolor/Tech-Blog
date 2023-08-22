@@ -9,7 +9,7 @@
 {{/if}}
 <!-- loops for each post and goes to post block partial -->
 {{#each posts as |post| }}
-    {{> post-block}}
+    {{> post-block logged_user=../logged_user}}
 {{/each}}
 
 <script src="/js/post.js"></script>

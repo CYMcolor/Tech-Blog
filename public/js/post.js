@@ -19,7 +19,6 @@ const newPost = async () => {
     }
 };
 
-
 document
   .querySelector('.save-btn')
   .addEventListener('click', newPost);

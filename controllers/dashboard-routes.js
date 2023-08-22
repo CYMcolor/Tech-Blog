@@ -24,12 +24,12 @@ router.get('/', withAuth, async (req, res) => {
         const posts = postData.map((post) => post.get({plain: true}));
         // variable so that only the logged in user can do stuff in their dashboard
         let sameUser = true;
-       
         // render the dashboard view
         res.render('dashboard', {
             user,
             posts,
             sameUser,
+            logged_user: req.session.user_id,
             logged_in: req.session.logged_in 
         });
     } catch (err) {
@@ -64,6 +64,7 @@ router.get('/:id',  withAuth, async (req, res) => {
         res.render('dashboard', {
             user,
             posts,
+            logged_user: req.session.user_id,
             logged_in: req.session.logged_in 
         });
     } catch (err) {

@@ -17,7 +17,8 @@ router.get('/', async (req, res) => {
         const posts = postData.map((post) => post.get({plain: true}));
         // render the homp view
         res.render('home', {
-            posts, 
+            posts,
+            logged_user: req.session.user_id, 
             logged_in: req.session.logged_in 
         });
     } catch (err) {
@@ -43,7 +44,7 @@ router.get('/post/:id', async (req, res) => {
         });
     
         const post = postData.get({plain: true});
-        
+        post.logged_user =req.session.logged_in; 
         // render the home view
         res.render('single-post', {
             post,
