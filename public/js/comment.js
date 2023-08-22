@@ -111,5 +111,3 @@ const commentBlock = document.querySelectorAll('.comment-block');
 commentBlock.forEach((block) =>{
     block.addEventListener('click', saveEditCommentHandler);
 });
-
-

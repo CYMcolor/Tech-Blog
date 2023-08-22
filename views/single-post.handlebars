@@ -1,18 +1,18 @@
 <!-- The post block-->
-{{> post-block post logged_user=../logged_user}}
+{{> post-block post logged_user=logged_user}}
 <!-- comment section-->
 <section>
     <h3>Comments</h3>
     <!-- add comment -->
     {{#if logged_in}}
-        <div class="create-comment" data-id="{{post.id}}">
+        <div class="create-comment card" data-id="{{post.id}}">
             <textarea name="create-comment" id="new-comment" cols="50" rows="3" placeholder="Add comment"></textarea>
             <button class="btn save-btn" data-id="{{post.id}}">Save</button>
         </div>
     {{/if}}
     <!-- Show all comments-->
     {{#each post.comments as |comment| }}
-        <div class= "comment comment-block" id="comment-{{comment.id}}" data-id="{{comment.id}}">
+        <div class= "comment comment-block card" id="comment-{{comment.id}}" data-id="{{comment.id}}">
             <p class="content">
                 {{comment.content}}
             </p>

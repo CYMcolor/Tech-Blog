@@ -1,9 +1,9 @@
 <div>{{user.username}}'s Dashboard</div>
 
 {{#if sameUser}}
-    <div class="create-post">
-        <input class="title" type="text" placeholder="Title">
-        <textarea name="create-post" id="new-post" cols="50" rows="3"></textarea>
+    <div class="create-post card">
+        <input class="title card-title" type="text" placeholder="Title">
+        <textarea name="create-post" id="new-post" cols="50" rows="3" placeholder="Add new post"></textarea>
         <button class="btn save-btn"> Save</button>
     </div>
 {{/if}}

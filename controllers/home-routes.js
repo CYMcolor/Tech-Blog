@@ -44,7 +44,6 @@ router.get('/post/:id', async (req, res) => {
         });
     
         const post = postData.get({plain: true});
-        post.logged_user =req.session.logged_in; 
         // render the home view
         res.render('single-post', {
             post,
@@ -64,5 +63,6 @@ router.get('/login', (req, res) => {
     }
     res.render('login');
 });
+
 
 module.exports = router;

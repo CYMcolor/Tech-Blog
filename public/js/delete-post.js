@@ -16,12 +16,20 @@ const deleteHandler = async (event) => {
             */
             const location = window.location.toString();
             const splitLocation = location.split('/');
-            if(splitLocation[3] == 'post')
-                //takes user back to previous page
+            
+            
+            if(document.referrer == window.location && splitLocation[3] == 'post'){
+                //if user refresed in single post page before deleting
+                //return to dashboard
+                document.location.replace('/dashboard');
+            }else if(splitLocation[3] == 'post'){
+                //takes user back to previous page is on single post page
                 document.location.replace(document.referrer);
-            else
-                //refreshes page
+            }else{
+                //anywhere else refreshes page
                 document.location.reload();
+            }    
+                
         } else {
             alert('Failed to delete post');
         }  

@@ -25,6 +25,8 @@ const editHandlerPost = async (event) =>{
     //text area stuff
     newText.classList.add('edit-content');
     newText.classList.add(`${parent.id}-edit`);
+    newText.setAttribute('rows', '20');
+    newText.setAttribute('cols', '75');
     newText.innerHTML = oldContent;
     // save button stuff
     newSaveBtn.classList.add('btn');
