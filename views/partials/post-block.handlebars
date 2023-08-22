@@ -1,6 +1,6 @@
-<article class = "post post-{{id}}">
+<article class = "post post-block post-{{id}}"  id="post-{{id}}" data-id="{{id}}">
     <h2>
-        <a href="/post/{{id}}">
+        <a href="/post/{{id}}" class="title">
             {{title}}
         </a>
     </h2>
@@ -21,7 +21,7 @@
     </div>
     
     {{#if (isEqual logged_user user.id)}}
-        <button class="btn edit-btn" data-id="{{id}}"> 
+        <button class="btn edit-btn edit-btn-post" data-id="{{id}}"> 
             Edit 
         </button>   
         <button class="btn delete-btn" data-id="{{id}}"> 
