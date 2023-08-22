@@ -36,12 +36,24 @@ const deleteHandlerComment = async (event) => {
     }
 };
 
+const editHandlerComment = async (event) =>{
+    console.log('edit button works');
+
+};
+
+// attach elments to event handlers
+//save
 document
   .querySelector('.save-btn')
   .addEventListener('click', newComment);
-
-const buttons = document.querySelectorAll('.delete-btn-comment');
-buttons.forEach((btn) =>{
+//delete
+const commentDeleteButtons = document.querySelectorAll('.delete-btn-comment');
+commentDeleteButtons.forEach((btn) =>{
       btn.addEventListener('click', deleteHandlerComment);
+});
+//edit
+const commentEditButtons = document.querySelectorAll('.edit-btn-comment');
+commentEditButtons.forEach((btn) =>{
+      btn.addEventListener('click', editHandlerComment);
 });
 

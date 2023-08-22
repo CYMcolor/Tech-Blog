@@ -20,6 +20,9 @@
         </div>
     </div>
     {{#if (isEqual logged_user user.id)}}
+        <button class="btn edit-btn" data-id="{{id}}"> 
+            Edit 
+        </button>   
         <button class="btn delete-btn" data-id="{{id}}"> 
             Delete 
         </button>            

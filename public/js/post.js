@@ -1,7 +1,25 @@
+//get html elements
+const titleArea = document.querySelector('.title');
+const textArea = document.querySelector('#new-post');
+//every half second checks the title and text area is being used
+setInterval(function() {
+    if (document.activeElement === textArea || document.activeElement === titleArea) {
+        // if active make text area bigger
+        textArea.setAttribute('rows', '20');
+        textArea.setAttribute('cols', '75');
+    } else {
+        // if not active make text area smaller
+        textArea.setAttribute('rows', '3');
+        textArea.setAttribute('cols', '50');
+    }
+},500);
+
+
 const newPost = async () => {
-    //retrieve information
-    const title = document.querySelector('.title').value;
-    const content = document.querySelector('#new-post').value;
+    //retrieve information in inputs
+    const title = titleArea.value;
+    const content = textArea.value;
+    
     // if valid info
     if(content && title){
         const response = await fetch(`/api/posts/`, {
