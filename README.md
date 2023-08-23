@@ -28,11 +28,11 @@ If the user is idle for one hour their session will end and they would need to l
 
 Screenshot of homepage: 
 
-![the blog's homepage](./public/images/home-page.png)
+![the blog's homepage](./public/images/home.png)
 
 Screenshot of user dashboard: 
 
-![the blog's homepage](./public/images/dashboard.PNG)
+![the blog's dashboard](./public/images/dashboard.PNG)
 
 ## License
  This application is covered under MIT License.
