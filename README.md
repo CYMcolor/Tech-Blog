@@ -28,7 +28,7 @@ If the user is idle for one hour their session will end and they would need to l
 
 Screenshot of homepage: 
 
-![the blog's homepage](./public/images/home.png)
+![the blog's homepage](./public/images/home.PNG)
 
 Screenshot of user dashboard: 
 
