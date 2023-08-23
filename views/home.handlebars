@@ -1,4 +1,7 @@
 <!-- loops for each post and goes to post block partial -->
-{{#each posts as |post| }}
-    {{> post-block  logged_user=../logged_user}}
-{{/each}}
+<section class="post-section">
+    {{#each posts as |post| }}
+        {{> post-block  logged_user=../logged_user}}
+    {{/each}}
+</section>
+

@@ -7,7 +7,7 @@
     {{#if logged_in}}
         <div class="create-comment card" data-id="{{post.id}}">
             <textarea name="create-comment" id="new-comment" cols="50" rows="3" placeholder="Add comment"></textarea>
-            <button class="btn save-btn" data-id="{{post.id}}">Save</button>
+            <button class="btn save-btn btn-primary" data-id="{{post.id}}">Save</button>
         </div>
     {{/if}}
     <!-- Show all comments-->
@@ -29,10 +29,10 @@
                 </div>
             </div>
             {{#if (isEqual ../logged_user comment.user.id)}}
-                <button class="btn edit-btn edit-btn-comment" data-id="{{comment.id}}"> 
+                <button class="btn edit-btn edit-btn-comment btn-secondary" data-id="{{comment.id}}"> 
                     Edit 
                 </button>            
-                <button class="btn delete-btn delete-btn-comment" data-id="{{comment.id}}"> 
+                <button class="btn delete-btn delete-btn-comment btn-danger " data-id="{{comment.id}}"> 
                     Delete 
                 </button>            
             {{/if}}

@@ -19,22 +19,22 @@
     <header class="header"> 
         <h1>Tech Blog</h1>  
     
-        <nav> 
+        <nav class=""> 
             <ul>
                 <li>
-                    <a href="/">Home</a>
+                    <a href="/" class="nav-link">Home</a>
                 </li>
                 <li>
-                    <a href="/dashboard">Dashboard</a>
+                    <a href="/dashboard" class="nav-link">Dashboard</a>
                 </li>
                 {{#if logged_in}}
                 <li>
-                    <a id="logout">Logout</a>
+                    <a id="logout" class="nav-link">Logout</a>
                 </li>
                 
                 {{else}}
                 <li>
-                    <a href="/login" >Login</a>
+                    <a href="/login" class="nav-link">Login</a>
                 </li>                
                 {{/if}}
 

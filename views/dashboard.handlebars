@@ -1,16 +1,18 @@
-<div>{{user.username}}'s Dashboard</div>
+<h2>{{user.username}}'s Dashboard</h2>
 
 {{#if sameUser}}
     <div class="create-post card">
         <input class="title card-title" type="text" placeholder="Title">
         <textarea name="create-post" id="new-post" cols="10" rows="3" placeholder="Add new post"></textarea>
-        <button class="btn save-btn"> Save</button>
+        <button class="btn save-btn btn-primary btn-sm"> Save</button>
     </div>
 {{/if}}
 <!-- loops for each post and goes to post block partial -->
+<section class="post-section">
+    {{#each posts as |post| }}
+        {{> post-block logged_user=../logged_user}}
+    {{/each}}
+</section>
 
-{{#each posts as |post| }}
-    {{> post-block logged_user=../logged_user}}
-{{/each}}
 
 <script src="/js/post.js"></script>

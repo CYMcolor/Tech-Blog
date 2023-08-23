@@ -12,23 +12,58 @@
 {
   display: inline-block;
   margin-left: 25px;
+  text-decoration: none;
+}
+.header nav ul li .nav-link
+{
+  color: green;
+  text-decoration: none;
 }
 
-.header nav ul li :hover
+.header nav ul li .nav-link:hover
 {
-  text-decoration: underline;
+  color: blue;
 }
 
-.post, .comment
-{
+#logout:hover{
+  cursor: pointer;
+}
+
+h1, h2{
   margin: 20px;
 }
-
 /* saves white space */
 textarea{
   white-space: pre-wrap;
 }
 /* only keeps new line white spaces */
 .content{
-  white-space:pre-line;
+  white-space: pre-wrap;
 }
+
+.card{
+  padding: 20px;
+  max-width: 500px;
+  max-height: 600px;
+  margin: 10px;
+}
+
+.post-section{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.post-info{
+  display: flex;
+  justify-content: right;
+}
+.post-info > *{
+  margin-left: 30px;
+}
+.btn-group
+{
+  padding-top: 10px;
+  max-width: 500px;
+}
+
+

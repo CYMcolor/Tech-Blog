@@ -37,6 +37,7 @@ const deleteHandlerComment = async (event) => {
 };
 
 const editHandlerComment = async (event) =>{
+    //parent relative to edit button
     const parent = event.target.parentNode;
     //save previous information
     const oldContent = parent.querySelector('.content').innerHTML.trim('');
@@ -56,6 +57,7 @@ const editHandlerComment = async (event) =>{
     newText.classList.add(`${parent.id}-edit`);
     newText.innerHTML = oldContent;
     newSaveBtn.classList.add('btn');
+    newSaveBtn.classList.add('btn-primary');
     newSaveBtn.classList.add('save-edit-btn');
     // append to parent element
     parent.append(newBlock);
@@ -64,6 +66,7 @@ const editHandlerComment = async (event) =>{
 };
 
 const saveEditCommentHandler  = async (event) =>{
+    //parent relative to save button
     //checks to see if save button exits
     if(event.target.classList.contains('save-edit-btn'))
     {

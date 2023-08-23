@@ -1,8 +1,8 @@
 const editHandlerPost = async (event) =>{
     console.log('edit post button was clicked');
-    const parent = event.target.parentNode;
+    const parent = event.target.parentNode.parentNode;
     //save previous information
-    const oldTitle = parent.querySelector('h2').querySelector('.title').innerHTML.trim('');
+    const oldTitle = parent.querySelector('h3').querySelector('.title').innerHTML.trim('');
     const oldContent = parent.querySelector('.content').innerHTML.trim('');
     console.log('old title: ' + oldTitle);
     console.log('old content: ' + oldContent);
@@ -30,6 +30,7 @@ const editHandlerPost = async (event) =>{
     newText.innerHTML = oldContent;
     // save button stuff
     newSaveBtn.classList.add('btn');
+    newSaveBtn.classList.add('btn-primary');
     newSaveBtn.classList.add('save-edit-btn');
     // append to parent element
     parent.append(newBlock);

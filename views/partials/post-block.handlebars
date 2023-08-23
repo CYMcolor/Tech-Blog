@@ -1,9 +1,9 @@
 <article class = "post post-block post-{{id}} card"  id="post-{{id}}" data-id="{{id}}">
-    <h2>
+    <h3>
         <a href="/post/{{id}}" class="title card-title">
             {{title}}
         </a>
-    </h2>
+    </h3>
     <p class="content">
         {{content}}
     </p>
@@ -21,13 +21,15 @@
     </div>
       {{!-- {{logged_user}} vs {{user.id}} --}}
     {{#if (isEqual logged_user user.id)}}
-  
-        <button class="btn edit-btn edit-btn-post" data-id="{{id}}"> 
+    <div class="btn-group btn-group-sm">
+        <button class="btn edit-btn edit-btn-post btn-secondary" data-id="{{id}}"> 
             Edit 
         </button>   
-        <button class="btn delete-btn" data-id="{{id}}"> 
+        <button class="btn delete-btn btn-danger" data-id="{{id}}"> 
             Delete 
-        </button>            
+        </button>  
+    </div>
+                  
     {{/if}}
     
 </article>
