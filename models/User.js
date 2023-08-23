@@ -53,7 +53,7 @@ User.init(
         freezeTableName: true,
         // formats sepration of word with underscores
         underscored: true,
-        modelName: 'user'
+        modelName: 'user',
     }
 );
 
