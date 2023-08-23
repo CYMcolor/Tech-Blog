@@ -33,16 +33,28 @@ body{
   background-attachment: fixed;
   background-image: linear-gradient(rgb(88, 88, 88), white);
 }
+main{
+  padding-left: 30px;
+}
+
+@media screen and (max-width: 768px){
+  main{
+    padding: 0px;
+  }
+}
 
 h1{
   color: lime;
 }
-h1, h2, h3{
+h1, h2{
   margin: 20px;
 }
 
 h3{
   font-size: larger;
+}
+.comment-section-title{
+  margin: 20px;
 }
 /* saves white space */
 textarea{
@@ -53,7 +65,7 @@ textarea{
   white-space:pre-line;
 }
 
-.dashboard-user{
+.dashboard-user, .home-title{
   color: lightgreen;
   font-size: 25px;
 
