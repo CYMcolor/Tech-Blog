@@ -152,3 +152,10 @@ textarea{
   }
 }
 
+.no-posts-message{
+  padding: 20px;
+  color: blue;
+  background-color: aqua;
+  border-radius: 25px;;
+}
+
