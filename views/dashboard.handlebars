@@ -3,7 +3,10 @@
 {{#if sameUser}}
     <div class="create-post card">
         <input class="title card-title" type="text" placeholder="Title">
-        <textarea name="create-post" id="new-post" cols="10" rows="3" placeholder="Add new post"></textarea>
+        <div class="textarea-wrapper">
+            <textarea name="create-post" id="new-post" cols="10" rows="3" placeholder="Add new post"></textarea>
+        </div>
+        
         <button class="btn save-btn btn-primary btn-sm"> Save</button>
     </div>
 {{/if}}

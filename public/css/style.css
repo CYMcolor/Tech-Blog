@@ -16,17 +16,22 @@
 }
 .header nav ul li .nav-link
 {
-  color: green;
+  color: white;
   text-decoration: none;
 }
 
 .header nav ul li .nav-link:hover
 {
-  color: blue;
+  color: lime;
 }
 
 #logout:hover{
   cursor: pointer;
+}
+
+body{
+  background-attachment: fixed;
+  background-image: linear-gradient(gray, white);
 }
 
 h1, h2{
@@ -72,3 +77,9 @@ textarea{
   margin-bottom: 10px;
 }
 
+textarea{
+  max-width: 460px;
+  max-height: 600px;
+  
+  border:20px solid white;
+}
