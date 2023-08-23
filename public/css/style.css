@@ -107,7 +107,6 @@ textarea{
   color: blue;
 }
 
-
 .login-title{
   color: darkgreen;
   font-size: larger;
@@ -121,6 +120,11 @@ textarea{
 
 .form-group{
   margin-top: 10px;
+}
+
+#password-warning{
+  margin-top: 10px;
+  color:red;
 }
 
 .btn-group

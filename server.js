@@ -24,9 +24,9 @@ const hbs = exphbs.create({ helpers });
 const sess = {
     secret: 'Super secret secret',
     cookie: {
-        // milliseconds * seconds * minutes * hours
-        //expires in 24 hours
-        maxAge: 1000 * 60 * 60 * 24,
+        // milliseconds * seconds * minutes * hours == 1000 * 60 * 60 * 24
+        //expires in 1 hour
+        maxAge: 1000 * 60 * 60,
         // store session cookieswhen connected to http server
         httpOnly: true,
         //must exucute protcal in https
