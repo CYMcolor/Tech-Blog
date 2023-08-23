@@ -2,12 +2,12 @@
 {{> post-block post logged_user=logged_user}}
 <!-- comment section-->
 <section>
-    <h3>Comments</h3>
+    <h3 class="comment-section-title">Comments</h3>
     <!-- add comment -->
     {{#if logged_in}}
         <div class="create-comment card" data-id="{{post.id}}">
             <textarea name="create-comment" id="new-comment" cols="50" rows="3" placeholder="Add comment"></textarea>
-            <button class="btn save-btn btn-primary" data-id="{{post.id}}">Save</button>
+            <button class="btn save-btn btn-primary btn-sm" data-id="{{post.id}}">Save</button>
         </div>
     {{/if}}
     <!-- Show all comments-->
@@ -19,7 +19,7 @@
             <div class="post-info">
                 <div class="author">
                     by 
-                    <a href="/dashboard/{{comment.user.id}}">
+                    <a href="/dashboard/{{comment.user.id}}" class="author-link">
                         {{comment.user.username}}
                     </a>
                 </div>
@@ -29,12 +29,15 @@
                 </div>
             </div>
             {{#if (isEqual ../logged_user comment.user.id)}}
+            <div class="btn-group btn-group-sm">
                 <button class="btn edit-btn edit-btn-comment btn-secondary" data-id="{{comment.id}}"> 
                     Edit 
                 </button>            
                 <button class="btn delete-btn delete-btn-comment btn-danger " data-id="{{comment.id}}"> 
                     Delete 
-                </button>            
+                </button>
+            </div>
+                            
             {{/if}}
                 
         </div>

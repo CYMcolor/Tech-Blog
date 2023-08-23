@@ -1,39 +1,42 @@
-<section class="login">
-    <h2>Login</h2>
-    <form class="form login-form">
-        <div class="form-group">
-            <label for="username-login">username:</label>
-            <input class="form-input" type="text" id="username-login" />
-        </div>
-        <div class="form-group">
-            <label for="password-login">password:</label>
-            <input class="form-input" type="password" id="password-login" />
-        </div>
-        <div class="form-group">
-            <button class="btn" type="submit">login</button>
-        </div>
-    </form>
-</section>
-<section class="signup">
-    <h2>Signup</h2>
-    <form class ="signup-form">
-        <div class="form-group">
-            <label for="username-signup">username:</label>
-            <input class="form-input" type="text" id="username-signup" />
-        </div>
-        <div class="form-group">
-            <label for="password-signup">password:</label>
-            <input class="form-input" type="password" id="password-signup" />
-        </div>
-        <div class="form-group">
-            <label for="re-password-signup">re-enter password:</label>
-            <input class="form-input" type="password" id="re-password-signup" />
-        </div>
-        <div id="password-warning"></div>
-        <div class="form-group">
-            <button class="btn" type="submit">signup</button>
-        </div>
-    </form>
-</section>
+
+<div class="login-wrapper">
+    <section class="login card">
+        <h2 class="login-title">Login</h2>
+        <form class="form login-form">
+            <div class="form-group">
+                <label for="username-login">username:</label>
+                <input class="form-input" type="text" id="username-login" />
+            </div>
+            <div class="form-group">
+                <label for="password-login">password:</label>
+                <input class="form-input" type="password" id="password-login" />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success" type="submit">login</button>
+            </div>
+        </form>
+    </section>
+    <section class="signup card">
+        <h2 class="login-title">Signup</h2>
+        <form class ="signup-form">
+            <div class="form-group">
+                <label for="username-signup">username:</label>
+                <input class="form-input" type="text" id="username-signup" />
+            </div>
+            <div class="form-group">
+                <label for="password-signup">password:</label>
+                <input class="form-input" type="password" id="password-signup" />
+            </div>
+            <div class="form-group">
+                <label for="re-password-signup">re-enter password:</label>
+                <input class="form-input" type="password" id="re-password-signup" />
+            </div>
+            <div id="password-warning"></div>
+            <div class="form-group">
+                <button class="btn btn-success" type="submit">signup</button>
+            </div>
+        </form>
+    </section>
+</div>
 
 <script src="./js/login.js"></script>

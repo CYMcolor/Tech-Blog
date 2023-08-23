@@ -38,7 +38,7 @@ const deleteHandlerComment = async (event) => {
 
 const editHandlerComment = async (event) =>{
     //parent relative to edit button
-    const parent = event.target.parentNode;
+    const parent = event.target.parentNode.parentNode;
     //save previous information
     const oldContent = parent.querySelector('.content').innerHTML.trim('');
     console.log('old content: ' + oldContent);
@@ -52,10 +52,14 @@ const editHandlerComment = async (event) =>{
     const newSaveBtn = document.createElement('button');
     newSaveBtn.innerHTML = 'Save';
     //add attributes
+    //textarea stuff
     newBlock.className = 'edit-comment';
     newText.classList.add('edit-content');
     newText.classList.add(`${parent.id}-edit`);
+    newText.setAttribute('rows', '5');
+    newText.setAttribute('cols', '75');
     newText.innerHTML = oldContent;
+    //button stuff
     newSaveBtn.classList.add('btn');
     newSaveBtn.classList.add('btn-primary');
     newSaveBtn.classList.add('save-edit-btn');
