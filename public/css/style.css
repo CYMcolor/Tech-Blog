@@ -31,9 +31,12 @@
 
 body{
   background-attachment: fixed;
-  background-image: linear-gradient(gray, white);
+  background-image: linear-gradient(rgb(88, 88, 88), white);
 }
 
+h1{
+  color: lime;
+}
 h1, h2{
   margin: 20px;
 }
@@ -46,6 +49,11 @@ textarea{
   white-space: pre-wrap;
 }
 
+.dashboard-user{
+  color: lightgreen;
+  font-size: 25px;
+
+}
 .card{
   padding: 20px;
   max-width: 500px;
@@ -65,6 +73,16 @@ textarea{
 .post-info > *{
   margin-left: 30px;
 }
+.card-title{
+  color: darkgreen;
+  font-size: larger;
+  text-decoration: none;
+}
+
+.card-title:hover{
+  color: blue;
+}
+
 .btn-group
 {
   padding-top: 10px;
@@ -82,4 +100,10 @@ textarea{
   max-height: 600px;
   
   border:20px solid white;
+}
+@media screen and (max-width: 768px){
+  textarea{
+    max-width: 320px;
+    max-height: 200px;
+  }
 }
