@@ -66,4 +66,9 @@ textarea{
   max-width: 500px;
 }
 
+.post-block .overflow-wrapper{
+  max-height: 350px;
+  overflow: auto;
+  margin-bottom: 10px;
+}
 
