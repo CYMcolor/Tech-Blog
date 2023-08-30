@@ -116,6 +116,7 @@ textarea{
 
 .login-wrapper{
   display: flex;
+  flex-wrap: wrap;
 }
 
 .form-group{
