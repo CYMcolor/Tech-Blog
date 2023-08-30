@@ -1,7 +1,7 @@
 const deleteHandler = async (event) => {
     //checks the id of post
-    let cofirm = confirm('Are you sure you want to delete?');
-    if(event.target.hasAttribute('data-id') && cofirm)
+    let cofirmPost = confirm('Are you sure you want to delete post?');
+    if(event.target.hasAttribute('data-id') && cofirmPost)
     {
         const post_id = event.target.getAttribute('data-id');
         const response = await fetch(`/api/posts/${post_id}`, {
@@ -36,7 +36,7 @@ const deleteHandler = async (event) => {
     }
 };
 
-const deleteButtons = document.querySelectorAll('.delete-btn');
+const deleteButtons = document.querySelectorAll('.delete-btn-post');
 deleteButtons.forEach((btn) =>{
     btn.addEventListener('click', deleteHandler);
 });
