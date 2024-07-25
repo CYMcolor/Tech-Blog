@@ -3,7 +3,7 @@
 ## Description/Link
 A blog for technology. Users can post and comment their opinions on technology.
 
-Link to deployed site: https://thrmex-1e6a18238950.herokuapp.com/
+(Discontinued) Link to deployed site: https://thrmex-1e6a18238950.herokuapp.com/
 
 ## Table of Contents
 - [Installation](#installation)
